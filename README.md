@@ -1,1 +1,41 @@
 # LoanApp-Analysis-using-Python
+INITIAL DATA ANALYSIS: The data file I obtained after md5 hasing is Loanapp. It contains information from mortgage applications made in the Boston area in 1990, and a follow up survey of the banks and other lending institutions that received these mortgage applications. These data were originally used in a famous study by researchers at the Boston Federal Reserve Bank. A data.frame with 1989 observations on 59 variables: • occ: occupancy • loanamt: loan amt in thousands • action: type of action taken • msa: msa number of property • suffolk: =1 if property in suffolk co. • appinc: applicant income, $1000s • typur: type of purchaser of loan • unit: number of units in property • married: =1 if applicant married • dep: number of dependents • emp: years employed in line of work • yjob: years at this job • self: =1 if self employed • atotinc: total monthly income • cototinc: coapp total monthly income • hexp: propose housing expense • price: purchase price • other: other financing, $1000s • liq: liquid assets • rep: no. of credit reports • gdlin: credit history meets guidelines • lines: no. of credit lines on reports • mortg: credit history on mortgage paym • cons: credit history on consumer stuf • pubrec: =1 if filed bankruptcy • hrat: housing exp, percent total inc • obrat: other oblgs, percent total inc • fixadj: fixed or adjustable rate?
+4 | P a g e
+• term: term of loan in months • apr: appraised value • prop: type of property • inss: PMI sought • inson: PMI approved • gift: gift as down payment • cosign: is there a cosigner • unver: unverifiable info • review: number of times reviewed • netw: net worth • unem: unemployment rate by industry • min30: =1 if minority pop. > 30percent • bd: =1 if boarded-up val > MSA med • mi: =1 if tract inc > MSA median • old: =1 if applic age > MSA median • vr: =1 if tract vac rte > MSA med • sch: =1 if > 12 years schooling • black: =1 if applicant black • hispan: =1 if applicant Hispanic • male: =1 if applicant male • reject: =1 if action == 3 • approve: =1 if action == 1 or 2 • mortno: no mortgage history • mortperf: no late mort. payments • mortlat1: one or two late payments • mortlat2: > 2 late payments • chist: =0 if accnts deliq. >= 60 days • multi: =1 if two or more units • loanprc: amt/price • thick: =1 if rep > 2 • white: =1 if applicant white
+5 | P a g e
+LIBRARIES USED: • NumPy stands for Numerical Python. The most powerful feature of NumPy is n-dimensional array. This library also contains basic linear algebra functions, Fourier transforms, advanced random number capabilities and tools for integration with other low level languages like Fortran, C and C++ • SciPy stands for Scientific Python. SciPy is built on NumPy. It is one of the most useful library for variety of high level science and engineering modules like discrete Fourier transform, Linear Algebra, Optimization and Sparse matrices. • Matplotlib for plotting vast variety of graphs, starting from histograms to line plots to heat plots.. You can use Pylab feature in ipython notebook (ipython notebook –pylab = inline) to use these plotting features inline. If you ignore the inline option, then pylab converts ipython environment to an environment, very similar to Matlab. You can also use Latex commands to add math to your plot. • Pandas for structured data operations and manipulations. It is extensively used for data munging and preparation. Pandas were added relatively recently to Python and have been instrumental in boosting Python’s usage in data scientist community. • Scikit Learn for machine learning. Built on NumPy, SciPy and matplotlib, this library contains a lot of effiecient tools for machine learning and statistical modeling including classification, regression, clustering and dimensionality reduction. • Statsmodels for statistical modeling. Statsmodels is a Python module that allows users to explore data, estimate statistical models, and perform statistical tests. An extensive list of descriptive statistics, statistical tests, plotting functions, and result statistics are available for different types of data and each estimator. • Seaborn for statistical data visualization. Seaborn is a library for making attractive and informative statistical graphics in Python. It is based on matplotlib. Seaborn aims to make visualization a central part of exploring and understanding data. EXPLORATORY DATA ANALYSIS: FINDING OUT THE NO. OF ROWS AND COLUMNS:
+6 | P a g e
+FINDING OUT THE NAMES OF THE COLUMNS: FINDING OUT THE TOP 5 ROWS OF OUR DATA SET: FINDING OUT THE BOTTOM 5 ROWS OF OUR DATA SET:
+DESCRIPTIVE STATISTICS:
+7 | P a g e
+MISSING VALUE ANALYSIS: <class 'pandas.core.frame.DataFrame'> RangeIndex: 1989 entries, 0 to 1988 Data columns (total 60 columns): index 1989 non-null int64 occ 1989 non-null int64 loanamt 1989 non-null int64 action 1989 non-null int64 msa 1989 non-null int64 suffolk 1989 non-null int64 appinc 1989 non-null int64 typur 1989 non-null int64 unit 1985 non-null float64 married 1986 non-null float64 dep 1986 non-null float64 emp 1989 non-null int64 yjob 1989 non-null int64 self 1989 non-null int64 atotinc 1989 non-null int64 cototinc 1989 non-null float64 hexp 1989 non-null float64 price 1989 non-null float64 other 1989 non-null float64 liq 1989 non-null float64 rep 1980 non-null float64 gdlin 1989 non-null int64 lines 1989 non-null float64 mortg 1989 non-null int64 cons 1989 non-null int64 pubrec 1989 non-null int64 hrat 1989 non-null float64 obrat 1989 non-null float64 fixadj 1989 non-null int64 term 1989 non-null float64 apr 1989 non-null float64 prop 1989 non-null int64 inss 1989 non-null int64 inson 1989 non-null int64 gift 1989 non-null int64 cosign 1989 non-null int64 unver 1989 non-null int64 review 1989 non-null int64 netw 1989 non-null float64 unem 1989 non-null float64 min30 1806 non-null float64 bd 1989 non-null int64
+8 | P a g e
+mi 1989 non-null int64 old 1989 non-null int64 vr 1989 non-null int64 sch 1989 non-null int64 black 1989 non-null int64 hispan 1989 non-null int64 male 1974 non-null float64 reject 1989 non-null int64 approve 1989 non-null int64 mortno 1989 non-null int64 mortperf 1989 non-null int64 mortlat1 1989 non-null int64 mortlat2 1989 non-null int64 chist 1989 non-null int64 multi 1985 non-null float64 loanprc 1989 non-null float64 thick 1980 non-null float64 white 1989 non-null int64 dtypes: float64(21), int64(39) memory usage: 932.4 KB
+unit, married, dep, rep, min30, male, multi and thick have missing values. There are several ways to deal with missing values. One of them is to drop the columns with missing values. Second way is to replace the missing values either with mean, mode or median. unit 4 married 3 dep 3 rep 9 min30 183 male 15 multi 4 thick 9
+9 | P a g e
+DISTRIBUTION ANALYSIS:
+10 | P a g e
+11 | P a g e
+12 | P a g e
+13 | P a g e
+14 | P a g e
+Transforming some of the varibles to remove outlier data
+15 | P a g e
+CORRELATION PLOTS:
+16 | P a g e
+17 | P a g e
+Heat Map for checking correlation:
+18 | P a g e
+REGRESSION ANALYSIS:
+1) approve~loanamt
+2) approve~white
+3) approve~white+hrat+loanprc
+4) approve~white+hrat+loanprc+male
+5) approve~white+male+(white*male)+hrat+loanprc
+6) approve ~ hrat + obrat + loanprc + unem+ male + married+dep+sch+cosign+ chist+pubrec+ mortlat1+mortlat2+vr
+7) approve~obrat+loanprc+married+chist+pubrec+vr
+The model with a good R-squared value and a model where the explanatory variables are significant can be considered as a good model, which explains the dependent variables in terms of the independent variables.
+I have shown the Regression results in the Jupyter nootbook attached with this word file.
+I have also included the results of K- Means clustering and tree- based modelling in the Jupyter notebook.
+CONCLUSION:
+The data set used for analysis is Loanapp. I initially performed Exploratory data analysis and tried to determine any relationships between the variables. I also tried to identify missing values and outlier data and clean my data accordingly. Then, I performed regression analysis on my data to check if the loan approval depends on the different variables. I also tried and implemented K-Means Clustering and Decision Tree learning to my data set. I was able to learn a lot during the analysis of this project,
